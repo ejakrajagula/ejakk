@@ -1,1 +1,231 @@
-# ejakk
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Profile | Muhammad Azra Fairuz</title>
+    <style>
+        /* Global Styles & Galaxy Background */
+        :root {
+            --deep-space: #0b0d17;
+            --nebula-blue: #1e3799;
+            --starlight: #d1d8e0;
+            --neon-cyan: #00d2ff;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at bottom, #1e3799 0%, #0b0d17 100%);
+            background-attachment: fixed;
+            color: white;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Star Effect Animation */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* Navigation Bar */
+        header {
+            background: rgba(11, 13, 23, 0.8);
+            backdrop-filter: blur(15px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 210, 255, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        nav a {
+            color: var(--starlight);
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            transition: 0.4s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Layout Content */
+        .section {
+            display: none; /* Sembunyikan semua halaman di awal */
+            min-height: 100vh;
+            padding: 120px 20px 60px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        /* Tampilkan halaman yang aktif */
+        .active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 800px;
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.1);
+        }
+
+        /* Profile Picture Style */
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--neon-cyan);
+            box-shadow: 0 0 20px var(--neon-cyan);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, var(--neon-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.2);
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 15px;
+            border: 1px solid var(--neon-cyan);
+            font-size: 0.9rem;
+        }
+
+        /* Social Link Button */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: var(--neon-cyan);
+            color: var(--deep-space);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" onclick="showPage('home')">Beranda</a>
+            <a href="#" onclick="showPage('profil')">Profil</a>
+            <a href="#" onclick="showPage('skill')">Keahlian</a>
+            <a href="#" onclick="showPage('medsos')">Medsos</a>
+            <a href="#" onclick="showPage('kontak')">Kontak</a>
+        </nav>
+    </header>
+
+    <section id="home" class="section active">
+        <div class="container">
+            <img src="images.jpg" alt="Foto Profil" class="profile-img">
+            <h1>Halo, Saya Muhammad Azra Fairuz</h1>
+            <p> .</p>
+        </div>
+    </section>
+
+    <section id="profil" class="section">
+        <div class="container">
+            <h2>Tentang Saya</h2>
+            <p style="margin-top: 20px;">Saya adalah pelajar di <strong>SMKS YPPI TUALANG</strong>.</p>
+            <p>Memiliki minat besar untuk bekerja di <strong>PT INDAH KIAT</strong> dan ingin menjadi manusia yg lebih baik dari sebelumnya.</p>
+        </div>
+    </section>
+
+    <section id="skill" class="section">
+        <div class="container">
+            <h2>Hobi Saya</h2>
+            <div style="margin-top: 20px;">
+                <span class="skill-tag">Mancing</span>
+                <span class="skill-tag">Bersepeda</span>
+                <span class="skill-tag">Bermain Futsal</span>
+                <span class="skill-tag">Joging</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="medsos" class="section">
+        <div class="container">
+            <h2>Media Sosial</h2>
+            <p>Temukan saya di platform berikut:</p>
+            <a href="https://instagram.com/Ejakrajagula" target="_blank" class="btn">Instagram @Ejakrajagula</a>
+        </div>
+    </section>
+
+    <section id="kontak" class="section">
+        <div class="container">
+            <h2>Hubungi Saya</h2>
+            <p>Email: ejakrajagula@gmail.com</p>
+            <p>Lokasi: Perawang, Riau</p>
+        </div>
+    </section>
+
+    <script>
+        function showPage(pageId) {
+            // Sembunyikan semua section
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Tampilkan section yang dipilih
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
